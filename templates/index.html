@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz
+{% endblock %}
+
+{% block main %}
+    <h1>Z/Yen I.T. Trivia</h1>
+    <br>
+    <h5>Welcome to ZITT. Put your knowledge of eighties computer science to the test, Z/Yen style.</h5>
+    <br>
+            <h5>Start a Game</h5>
+            <div>
+            <form class='col-sm' action="/" method="post">
+                <div class="form-group">
+                    <p>Enter a Name or Nickname:</p>
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Name" type="text">
+                </div>
+                <p>Select a Category:</p>
+                <fieldset>
+                        <p>
+                          <select class='form-control' name = "category">
+                            <option value="ALL">All Categories</option>
+                            <option value="IND">Industry</option>
+                            <option value="SOF">Software and Operating Systems</option>
+                            <option value="HAR">Hardware and Communications</option>
+                            <option value="BIT">Bits 'n' Bytes</option>
+                            <option value="PEO">People and History</option>
+                            <option value="TEC">Technotalk</option>
+                            <option value="USE">Uploaded Questions</option>
+                          </select>
+                       </p>
+                </fieldset>
+                <br>
+                <button class="btn btn-warning" name='play' type="submit">Play</button>
+                </form>
+            </div>
+{% endblock %}

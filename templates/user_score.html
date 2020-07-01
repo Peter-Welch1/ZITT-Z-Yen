@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Score
+{% endblock %}
+
+{% block main %}
+<br><br>
+<h4>{{ message }}</h4>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Score</td>
+            <td>Date</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ score }}</td>
+            <td>{{ date }}</td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
+<form action='/' method='get'>
+    <button type="submit" class="btn btn-warning">Home</button>
+</form>
+{% endblock %}

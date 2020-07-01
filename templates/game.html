@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+        <h5>Question</h5>
+        <br>
+        <h5>{{ question_no }}/{{ game_length }} </h5>
+    </div>
+
+    <div class="col"></div>
+    <div class="col"></div>
+
+    <div class="col">
+        <h5>Score</h5>
+        <br>
+        <h5>{{ score }}</h5>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+<h4>{{ question }}</h4>
+<br>
+<br>    
+<h4 class='answer' style='visibility:hidden; color: red;'>Answer: {{ answer }}</h4>
+<br>
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+        <form action='/wrong' method='post'>
+            <button id='button1' type="submit" class="btn btn-warning">Wrong</button>
+        </form>
+    </div>
+    <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <button id='reveal' type="button" class="btn btn-warning form-control"><strong>Reveal Answer</strong></button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Third group">
+        <form action='/game' method='post'>
+            <button id='button2' type="submit" class="btn btn-warning">Correct</button>
+        </form>
+    </div>
+<br><br><br><br>
+<p>Change Category:</p>
+<div>
+<form action='/change_cat', method='post'>
+<fieldset>
+          <select class='form-control' name = "category">
+            <option value="ALL">All Categories</option>
+            <option value="IND">Industry</option>
+            <option value="SOF">Software and Operating Systems</option>
+            <option value="HAR">Hardware and Communications</option>
+            <option value="BIT">Bits 'n' Bytes</option>
+            <option value="PEO">People and History</option>
+            <option value="TEC">Technotalk</option>
+            <option value="USE">Uploaded Questions</option>
+          </select>
+</fieldset>
+<br>
+<button class="btn btn-warning" name='change' type="submit">Change</button>
+</form>
+</div>
+
+<script>
+    let a = document.querySelector('.answer');
+    document.querySelector('#reveal').onclick = function(){
+        if (a.style.visibility === 'hidden')
+        {
+            a.style.visibility = 'visible';
+        }
+        else
+        {
+            a.style.visibility = 'hidden';
+        }
+    }
+
+</script>
+{% endblock %}

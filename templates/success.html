@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    success
+{% endblock %}
+
+{% block main %}
+    <h4>{{ message }}</h4>
+    <form action="/">
+        <input class='btn btn-warning' type="submit" value='Return Home'/>
+    </form>
+{% endblock %}
